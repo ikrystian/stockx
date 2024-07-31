@@ -1,128 +1,152 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-  /*color-scheme: light dark;*/
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    /*color-scheme: light dark;*/
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
 
-  --font-color: #293632;
-  --headings-color: #2D473E;
-  --primary-color: #006340;
+    --font-color: #293632;
+    --headings-color: #2D473E;
+    --primary-color: #006340;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  color: var(--font-color);
+    font-family: "Roboto", sans-serif;
+    color: var(--font-color);
 }
 
 input, button {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  line-height: 1.375rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    line-height: 1.375rem;
 }
 
 h1 {
-  font-size: 3.25rem;
-  line-height: 3.4375rem;
+    font-size: 3.25rem;
+    line-height: 3.4375rem;
 }
 
 .container {
-  width: 1232px;
-  max-width: 100%;
-  margin-inline: auto;
+    width: 1232px;
+    max-width: 100%;
+    margin-inline: auto;
 
-  &.main-container {
+    &.main-container {
 
-    .row {
-      @media (width > 768px) {
-        display: flex;
-      }
+        .row {
+            @media (width > 768px) {
+                display: flex;
+            }
+        }
     }
-  }
 }
 
 p {
-  font-size: 1rem;
-  line-height: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
 
-  &:not(:last-child) {
-    margin-bottom: 0.5rem;
-  }
+    &:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
 }
 
 .form-col {
-  width: 42.375rem;
+    width: 42.375rem;
 }
 
 .article {
-  &:not(:last-child) {
-    margin-bottom: 3rem;
-  }
-
-  @media (width > 14rem) {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
+    &:not(:last-child) {
+        margin-bottom: 3rem;
     }
-  }
 
-  img {
-    border-radius: 1.875rem;
-  }
+    @media (width > 14rem) {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
 
-  h3 {
-    font-size: 2.625rem;
-    line-height: 3.25rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-
-    strong {
-      color: var(--primary-color);
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
     }
-  }
+
+    img {
+        border-radius: 1.875rem;
+    }
+
+    h3 {
+        font-size: 2.625rem;
+        line-height: 3.25rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+
+        strong {
+            color: var(--primary-color);
+        }
+    }
 }
 
 
 .bottom-section {
-  margin-top: 3rem;
-  background-color: #F5F5F5;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 1.5rem 1rem;
-  margin-bottom: 1rem;
+    margin-top: 3rem;
+    background-color: #F5F5F5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 1.5rem 1rem;
+    margin-bottom: 1rem;
 
-  strong {
-    display: block;
-    font-size: 0.75rem;
-    margin-bottom: 0.25rem;
-  }
+    strong {
+        display: block;
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
+    }
 
-  p {
-    font-size: 0.625rem;
-    line-height: 1rem;
-  }
+    p {
+        font-size: 0.625rem;
+        line-height: 1rem;
+    }
 }
 
 .footer {
-  text-align: center;
-  color: #293632;
-  padding-bottom: 1rem;
+    text-align: center;
+    color: #293632;
+    padding-bottom: 1rem;
 
-  p {
-    font-size: 0.75rem;
-    margin-bottom: 0.25rem;
-  }
+    p {
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
+    }
+}
+
+.title-section {
+    margin-block: 3rem 2rem;
+    text-align: center;
+
+    span {
+        @media (width > 528px) {
+            display: block;
+        }
+    }
+
+    h2 {
+        font-size: 3rem;
+        max-width: 790px;
+        margin-inline: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        color: #006340;
+    }
 }

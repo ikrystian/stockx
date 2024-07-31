@@ -19,10 +19,12 @@
         </div>
     </div>
 
+    <section class="title-section">
     <div class="container">
-        <h2 class="title">Top Tech Mystery Box at Unbeatable Prices</h2>
+        <h2 class="title-section__heading">Top Tech Mystery Box<span> at Unbeatable Prices</span></h2>
         <p>Fast shipping | Easy returns | Special discounts for students</p>
     </div>
+    </section>
 
     <div class="container articles">
         <article class="article">
