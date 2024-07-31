@@ -1,3 +1,9 @@
+<script>
+    import formImage1 from '../assets/form_1.svg';
+    import formImage2 from '../assets/form_2.svg';
+    import formImage3 from '../assets/form_3.svg';
+</script>
+
 <section class="form-section">
     <h2 class="form-section__title">Enter details</h2>
     <form action="" class="form">
@@ -41,7 +47,13 @@
         </div>
 
         <button class="form__button">Proceed to payment</button>
-        <span>IMAGE HERE</span>
+        <footer class="form__footer">
+            <ul>
+                <li><img src={formImage1} alt=""></li>
+                <li><img src={formImage2} alt=""></li>
+                <li><img src={formImage3} alt=""></li>
+            </ul>
+        </footer>
     </form>
 </section>
 
@@ -103,7 +115,18 @@
       font-weight: 600;
       text-transform: uppercase;
       cursor: pointer;
-      margin-top: 0.5rem;
+      margin-block: 0.5rem;
+    }
+
+    &__footer {
+      ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        gap: 1rem;
+      }
     }
   }
 </style>
