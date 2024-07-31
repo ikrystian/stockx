@@ -93,3 +93,25 @@ p {
     }
   }
 }
+
+
+.bottom-section {
+  margin-top: 3rem;
+  background-color: #F5F5F5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 1.5rem 1rem;
+  margin-bottom: 1rem;
+
+  strong {
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    font-size: 0.625rem;
+    line-height: 1rem;
+  }
+}
