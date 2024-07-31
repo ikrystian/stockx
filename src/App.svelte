@@ -2,6 +2,7 @@
     import Slider from "./components/Slider.svelte";
     import Form from "./components/Form.svelte";
     import articleImage from "./assets/article-image.svg";
+    import footer from "./assets/footer.jpg";
 </script>
 
 <main>
@@ -75,5 +76,6 @@
 
 </main>
 <footer class="footer">
-    credit cards
+    <p>We accept the following credit cards</p>
+    <img src={footer} alt="credit cards image">
 </footer>
