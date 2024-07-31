@@ -1,7 +1,22 @@
+<script>
+    import Slider from "./components/Slider.svelte";
+    import Form from "./components/Form.svelte";
+</script>
+
 <main>
     <div class="container">
-        <div class="slider">slider</div>
-        <div class="form">form</div>
+        <div class="row">
+            <div class="col">
+                <Slider/>
+            </div>
+            <div class="col">
+                <h1>Chance to win a StockX Mystery Box today!</h1>
+                <p>Unleash the Excitement of Mystery Electronics</p>
+
+                <Form />
+
+            </div>
+        </div>
     </div>
 
     <div class="container">
