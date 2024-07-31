@@ -1,3 +1,6 @@
+<script>
+    import slider from '../assets/slider.png';
+</script>
 <section class="slider">
-    Slider
+    <img src={slider} alt="main slider image placeholder">
 </section>
