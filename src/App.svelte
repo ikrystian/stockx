@@ -4,23 +4,22 @@
 </script>
 
 <main>
-    <div class="container">
+    <div class="container main-container">
         <div class="row">
             <div class="col">
                 <Slider/>
             </div>
-            <div class="col">
+            <div class="col form-col">
                 <h1>Chance to win a StockX Mystery Box today!</h1>
                 <p>Unleash the Excitement of Mystery Electronics</p>
-
                 <Form />
-
             </div>
         </div>
     </div>
 
     <div class="container">
-        <div class="title">section title</div>
+        <h2 class="title">Top Tech Mystery Box at Unbeatable Prices</h2>
+        <p>Fast shipping | Easy returns | Special discounts for students</p>
     </div>
 
     <div class="container">

@@ -9,6 +9,7 @@
 
 
   --font-color: #293632;
+  --headings-color: #2D473E;
   --primary-color: #006340;
 }
 
@@ -23,6 +24,12 @@ body {
   color: var(--font-color);
 }
 
+input, button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
 h1 {
   font-size: 3.25rem;
   line-height: 3.4375rem;
@@ -32,4 +39,17 @@ h1 {
   width: 1232px;
   max-width: 100%;
   margin-inline: auto;
+
+  &.main-container {
+
+    .row {
+      @media (width > 768px) {
+        display: flex;
+      }
+    }
+  }
+}
+
+.form-col {
+  width: 42.375rem;
 }
