@@ -1,7 +1,6 @@
 <script>
     import Slider from "./components/Slider.svelte";
     import Form from "./components/Form.svelte";
-    import articleImage from "./assets/article-image.svg";
     import footer from "./assets/footer.jpg";
 </script>
 
@@ -29,7 +28,7 @@
     <div class="container articles">
         <article class="article">
             <div class="article__image-section">
-                <img src={articleImage} alt="article image">
+                <img src="src/assets/article-image-1.svg" alt="article image">
             </div>
             <div class="article__content-section">
                 <div>
@@ -43,7 +42,7 @@
         </article>
         <article class="article">
             <div class="article__image-section">
-                <img src={articleImage} alt="article image">
+                <img src="src/assets/article-image-2.jpg" alt="article image">
             </div>
             <div class="article__content-section">
                 <div>
