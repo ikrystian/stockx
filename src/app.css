@@ -83,14 +83,13 @@ p {
 }
 
 .article {
-    display: block;
+    display: flex;
     flex-direction: column;
+    gap: 2rem;
 
-
-    @media (width > 14rem) {
-        display: flex;
+    @media (width > 772px) {
+        flex-direction: row;
         align-items: center;
-        gap: 2rem;
 
         &:nth-child(even) {
             flex-direction: row-reverse;
