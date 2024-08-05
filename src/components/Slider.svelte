@@ -78,7 +78,7 @@
     <div class="slider">
         {#each photos as photo, index (photo)}
             {#if index === currentIndex}
-                <img src={photo} alt="Photo" class="photo" transition:fade>
+                <img src={photo} alt="Slider image {index}" class="photo" transition:fade>
             {/if}
         {/each}
     </div>
@@ -87,7 +87,10 @@
             <button
                     type="button"
                     class="thumbnail {index === currentIndex ? 'active' : ''}"
-                    on:click={() => selectPhoto(index)}
+                    on:click={(e) => {
+                        e.preventDefault();
+                        selectPhoto(index)
+                    }}
             >
                 <img src={photo} alt="Thumbnail"/>
             </button>
