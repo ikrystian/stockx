@@ -51,17 +51,28 @@
   .thumbnails {
     margin-top: 1rem;
     display: flex;
-    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (width > 568px) {
+      justify-content: space-between;
+    }
   }
 
   .thumbnail {
-    width: 132px;
-    height: 132px;
+    width: 72px;
+    height: 72px;
     cursor: pointer;
     transition: transform 0.3s linear;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--primary-color);
+
+    @media (width> 568px) {
+      width: 132px;
+      height: 132px;
+    }
 
     img {
       width: 100%;
