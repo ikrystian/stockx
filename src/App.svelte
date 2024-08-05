@@ -1,6 +1,7 @@
 <script>
     import Slider from "./components/Slider.svelte";
     import Form from "./components/Form.svelte";
+    import Footer from "./components/Footer.svelte";
 
     const articles = [
         {
@@ -98,7 +99,4 @@
     </section>
 
 </main>
-<footer class="footer">
-    <p>We accept the following credit cards</p>
-    <img alt="credit cards image" src="src/assets/footer.webp">
-</footer>
+<Footer/>
