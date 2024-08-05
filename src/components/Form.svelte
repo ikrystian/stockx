@@ -18,7 +18,7 @@
 
     const form = new ZodFormStore(formSchema, {
         debug: true,
-        onSubmit: async(values) => {
+        onSubmit: async (values) => {
             await new Promise((r) => setTimeout(r, 2000))
             console.log('Submitted values:', values)
         }
@@ -67,7 +67,7 @@
         email_dirty,
         email_touched,
     } = form.stores
-    const { submitting, valid, model } = form
+    const {submitting, valid, model} = form
 
 </script>
 
@@ -78,15 +78,15 @@
             <div class="form__group">
                 <label class="form__label" for="firstName">First name</label>
                 <input
-                        name="firstName"
-                        on:input={form.fields.firstName.handleChange}
-                        on:blur={form.fields.firstName.handleBlur}
-                        type="text"
                         class="form__input"
-                        placeholder="First name"
-                        value={$firstName_value || ''}
                         class:form__input--invalid={!$firstName_valid && $firstName_touched}
                         class:form__input--valid={$firstName_valid && $firstName_dirty}
+                        name="firstName"
+                        on:blur={form.fields.firstName.handleBlur}
+                        on:input={form.fields.firstName.handleChange}
+                        placeholder="First name"
+                        type="text"
+                        value={$firstName_value || ''}
                 />
                 {#if $firstName_error && $firstName_touched}<p>{$firstName_error}</p>{/if}
             </div>
@@ -94,15 +94,15 @@
             <div class="form__group">
                 <label class="form__label" for="lastName">Last name</label>
                 <input
-                        name="lastName"
-                        on:input={form.fields.lastName.handleChange}
-                        on:blur={form.fields.lastName.handleBlur}
-                        type="text"
                         class="form__input"
-                        placeholder="Last name"
-                        value={$lastName_value || ''}
                         class:form__input--invalid={!$lastName_valid && $lastName_touched}
                         class:form__input--valid={$lastName_valid && $lastName_dirty}
+                        name="lastName"
+                        on:blur={form.fields.lastName.handleBlur}
+                        on:input={form.fields.lastName.handleChange}
+                        placeholder="Last name"
+                        type="text"
+                        value={$lastName_value || ''}
                 />
                 {#if $lastName_error && $lastName_touched}<p>{$lastName_error}</p>{/if}
             </div>
@@ -112,15 +112,15 @@
         <div class="form__group">
             <label class="form__label" for="street">Street</label>
             <input
-                    name="street"
-                    on:input={form.fields.street.handleChange}
-                    on:blur={form.fields.street.handleBlur}
-                    type="text"
                     class="form__input"
-                    placeholder="Street"
-                    value={$street_value || ''}
                     class:form__input--invalid={!$street_valid && $street_touched}
                     class:form__input--valid={$street_valid && $street_dirty}
+                    name="street"
+                    on:blur={form.fields.street.handleBlur}
+                    on:input={form.fields.street.handleChange}
+                    placeholder="Street"
+                    type="text"
+                    value={$street_value || ''}
             />
             {#if $street_error && $street_touched}<p>{$street_error}</p>{/if}
         </div>
@@ -130,15 +130,15 @@
             <div class="form__group">
                 <label class="form__label" for="postalCode">Postal code</label>
                 <input
-                        name="postalCode"
-                        on:input={form.fields.postalCode.handleChange}
-                        on:blur={form.fields.postalCode.handleBlur}
-                        type="text"
                         class="form__input"
-                        placeholder="Postal code"
-                        value={$postalCode_value || ''}
                         class:form__input--invalid={!$postalCode_valid && $postalCode_touched}
                         class:form__input--valid={$postalCode_valid && $postalCode_dirty}
+                        name="postalCode"
+                        on:blur={form.fields.postalCode.handleBlur}
+                        on:input={form.fields.postalCode.handleChange}
+                        placeholder="Postal code"
+                        type="text"
+                        value={$postalCode_value || ''}
                 />
                 {#if $postalCode_error && $postalCode_touched}<p>{$postalCode_error}</p>{/if}
             </div>
@@ -146,15 +146,15 @@
             <div class="form__group">
                 <label class="form__label" for="city">City</label>
                 <input
-                        name="city"
-                        on:input={form.fields.city.handleChange}
-                        on:blur={form.fields.city.handleBlur}
-                        type="text"
                         class="form__input"
-                        placeholder="City"
-                        value={$city_value || ''}
                         class:form__input--invalid={!$city_valid && $city_touched}
                         class:form__input--valid={$city_valid && $city_dirty}
+                        name="city"
+                        on:blur={form.fields.city.handleBlur}
+                        on:input={form.fields.city.handleChange}
+                        placeholder="City"
+                        type="text"
+                        value={$city_value || ''}
                 />
                 {#if $city_error && $city_touched}<p>{$city_error}</p>{/if}
             </div>
@@ -164,15 +164,15 @@
         <div class="form__group">
             <label class="form__label" for="phone">Phone number</label>
             <input
-                    name="phone"
-                    on:input={form.fields.phone.handleChange}
-                    on:blur={form.fields.phone.handleBlur}
-                    type="tel"
                     class="form__input"
-                    placeholder="Phone number"
-                    value={$phone_value || ''}
                     class:form__input--invalid={!$phone_valid && $phone_touched}
                     class:form__input--valid={$phone_valid && $phone_dirty}
+                    name="phone"
+                    on:blur={form.fields.phone.handleBlur}
+                    on:input={form.fields.phone.handleChange}
+                    placeholder="Phone number"
+                    type="tel"
+                    value={$phone_value || ''}
             />
             {#if $phone_error && $phone_touched}<p>{$phone_error}</p>{/if}
         </div>
@@ -180,33 +180,40 @@
         <div class="form__group">
             <label class="form__label" for="email">E-mail</label>
             <input
-                    name="email"
-                    on:input={form.fields.email.handleChange}
-                    on:blur={form.fields.email.handleBlur}
-                    type="email"
                     class="form__input"
-                    placeholder="E-mail"
-                    value={$email_value || ''}
                     class:form__input--invalid={!$email_valid && $email_touched}
                     class:form__input--valid={$email_valid && $email_dirty}
+                    name="email"
+                    on:blur={form.fields.email.handleBlur}
+                    on:input={form.fields.email.handleChange}
+                    placeholder="E-mail"
+                    type="email"
+                    value={$email_value || ''}
             />
             {#if $email_error && $email_touched}<p>{$email_error}</p>{/if}
         </div>
 
-        <button  class="form__button" type="submit" disabled={!$valid || $submitting}>
+        <button class="form__button" disabled={!$valid || $submitting} type="submit">
             {$submitting ? 'Processing...' : 'Proceed to payment'}
         </button>
         <footer class="form__footer">
             <ul>
-                <li><img src={formImage1} alt=""></li>
-                <li><img src={formImage2} alt=""></li>
-                <li><img src={formImage3} alt=""></li>
+                <li><img alt="" src={formImage1}></li>
+                <li><img alt="" src={formImage2}></li>
+                <li><img alt="" src={formImage3}></li>
             </ul>
         </footer>
     </form>
 </section>
 
 <style lang="scss">
+  .form-section {
+    margin-top: 2rem;
+
+    @media (width > 768px) {
+      margin-top: 0;
+    }
+  }
 
   .form {
     display: flex;
@@ -236,7 +243,7 @@
 
 
       //  !todo change it to container queries in the future
-      @media (width > 536px)  {
+      @media (width > 536px) {
         flex-direction: row;
       }
 
