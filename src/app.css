@@ -43,8 +43,15 @@ img {
 }
 
 h1 {
-    font-size: 3.25rem;
-    line-height: 3.4375rem;
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+
+    @media (width > 772px) {
+        font-size: 3.25rem;
+        line-height: 3.4375rem;
+        margin-bottom: 0;
+    }
 }
 
 .container {
