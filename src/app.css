@@ -180,15 +180,23 @@ p {
     }
 
     h2 {
-        font-size: 3rem;
+        font-size: 2rem;
         max-width: 790px;
         margin-inline: auto;
         margin-bottom: 0.5rem;
+
+        @media (width > 768px) {
+            font-size: 3rem;
+        }
     }
 
     p {
-        font-size: 1.25rem;
-        line-height: 1.5rem;
+        font-size: 1rem;
         color: #006340;
+
+        @media (width > 768px) {
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+        }
     }
 }
