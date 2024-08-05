@@ -231,8 +231,22 @@
     &__row {
       width: 100%;
       display: flex;
+      flex-direction: column;
       gap: 1rem;
 
+
+      //  !todo change it to container queries in the future
+      @media (width > 536px)  {
+        flex-direction: row;
+      }
+
+      @media (width > 768px) {
+        flex-direction: column;
+      }
+
+      @media (width > 992px) {
+        flex-direction: row;
+      }
 
       > * {
         flex: 1 1 auto;
