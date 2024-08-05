@@ -27,6 +27,7 @@
 body {
     font-family: "Roboto", sans-serif;
     color: var(--font-color);
+    padding: 1rem;
 }
 
 input, button {
@@ -52,10 +53,16 @@ h1 {
     margin-inline: auto;
 
     &.main-container {
-
         .row {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 2rem;
+
             @media (width > 768px) {
-                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1.25rem;
+                justify-content: center;
             }
         }
     }
