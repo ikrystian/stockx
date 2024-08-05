@@ -49,6 +49,7 @@
   }
 
   .thumbnails {
+    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
   }
@@ -84,6 +85,7 @@
     <div class="thumbnails">
         {#each photos as photo, index}
             <button
+                    type="button"
                     class="thumbnail {index === currentIndex ? 'active' : ''}"
                     on:click={() => selectPhoto(index)}
             >
