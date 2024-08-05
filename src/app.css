@@ -119,13 +119,16 @@ p {
 
 
 .bottom-section {
-    margin-top: 3rem;
     background-color: #F5F5F5;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 1.5rem 1rem;
-    margin-bottom: 1rem;
+    margin: 3rem -1rem 1rem;
+    width: calc(100% + 2rem);
+
+    @media (width > 568px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
     strong {
         display: block;
