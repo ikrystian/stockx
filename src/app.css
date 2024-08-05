@@ -145,7 +145,10 @@ p {
 .footer {
     text-align: center;
     color: #293632;
-    padding-bottom: 1rem;
+
+    img {
+        margin-inline: auto;
+    }
 
     p {
         font-size: 0.75rem;
