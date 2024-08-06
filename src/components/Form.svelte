@@ -211,7 +211,7 @@
             <footer class="form__footer">
                 <ul>
                     {#each formImages as image, index(image)}
-                        <li><img alt="form image {index}" src="src/assets/{image}"></li>
+                        <li><img alt="form image {index}" src="/assets/{image}"></li>
                     {/each}
                 </ul>
             </footer>

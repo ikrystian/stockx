@@ -11,9 +11,9 @@
 
     // Define the photos array with the Photo type
     let photos: Photo[] = [
-        {src: 'src/assets/slider_1.webp', new_price: 1.99, old_price: 500},
-        {src: 'src/assets/slider_2.webp', new_price: 1.98, old_price: 501},
-        {src: 'src/assets/slider_3.webp', new_price: 1.07, old_price: 502},
+        {src: '/assets/slider_1.webp', new_price: 1.99, old_price: 500},
+        {src: '/assets/slider_2.webp', new_price: 1.98, old_price: 501},
+        {src: '/assets/slider_3.webp', new_price: 1.07, old_price: 502},
     ];
 
     // Define the currentIndex with a number type

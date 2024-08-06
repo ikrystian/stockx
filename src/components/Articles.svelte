@@ -39,7 +39,7 @@
             <article class="article" id="index-{index}">
                 {#if article.image}
                     <div class="article__image-wrapper">
-                        <img class="article__image" src="src/assets/{article.image.fileName}"
+                        <img class="article__image" src="/assets/{article.image.fileName}"
                              alt="Article image {index}">
                     </div>
                 {/if}
