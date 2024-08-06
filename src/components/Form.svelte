@@ -211,7 +211,7 @@
     margin-top: 2rem;
 
     @media (width > 768px) {
-      margin-top: 0;
+      margin-top: 1.5rem;
     }
   }
 

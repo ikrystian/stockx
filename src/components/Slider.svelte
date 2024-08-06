@@ -3,10 +3,11 @@
     import {onMount} from 'svelte';
 
     let photos = [
-        'src/assets/slider_1.webp',
-        'src/assets/slider_2.webp',
-        'src/assets/slider_3.webp'
+        {src: 'src/assets/slider_1.webp', new_price: 1.99, old_price: 500},
+        {src: 'src/assets/slider_2.webp', new_price: 1.98, old_price: 501},
+        {src: 'src/assets/slider_3.webp', new_price: 1.07, old_price: 502},
     ];
+
     let currentIndex = 0;
 
     const selectPhoto = (index: number) => {
@@ -16,7 +17,7 @@
     onMount(() => {
         photos.forEach(photo => {
             const img = new Image();
-            img.src = photo;
+            img.src = photo.src;
         });
     });
 </script>
@@ -38,6 +39,35 @@
     width: 100%;
     aspect-ratio: 1;
     overflow: hidden;
+  }
+
+  .slider-promo {
+    background-color: var(--primary-color);
+    color: #fff;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    strong {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 2.75rem;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 1rem;
+    }
   }
 
   .photo {
@@ -89,7 +119,13 @@
     <div class="slider">
         {#each photos as photo, index (photo)}
             {#if index === currentIndex}
-                <img src={photo} alt="Slider image {index}" class="photo" transition:fade>
+                <div transition:fade>
+                    <div class="slider-promo">
+                        <strong>${photo.new_price}</strong>
+                        <p>Original value <span>${photo.old_price}</span></p>
+                    </div>
+                    <img src={photo.src} alt="Slider image {index}" class="photo">
+                </div>
             {/if}
         {/each}
     </div>
@@ -103,7 +139,7 @@
                         selectPhoto(index)
                     }}
             >
-                <img src={photo} alt="Thumbnail"/>
+                <img src={photo.src} alt="Thumbnail"/>
             </button>
         {/each}
     </div>
