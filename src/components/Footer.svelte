@@ -1,6 +1,7 @@
 <footer class="footer">
     <p class="footer__text">We accept the following credit cards</p>
-    <img alt="credit cards image" class="footer__image" loading="lazy" src="/assets/footer.webp">
+    <img alt="credit cards image" class="footer__image" height="40" loading="lazy" src="/assets/footer.webp"
+         width="430">
 </footer>
 
 <style lang="scss">
