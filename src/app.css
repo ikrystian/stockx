@@ -160,13 +160,22 @@ p {
 
     strong {
         display: block;
-        font-size: 0.75rem;
         margin-bottom: 0.25rem;
+        font-size: 1rem;
+        line-height: 1.25rem;
+
+        @media (width > 568px) {
+            font-size: 0.75rem;
+        }
     }
 
     p {
-        font-size: 0.625rem;
+        font-size: 0.875rem;
         line-height: 1rem;
+
+        @media (width > 568px) {
+            font-size: 0.625rem;
+        }
     }
 }
 
