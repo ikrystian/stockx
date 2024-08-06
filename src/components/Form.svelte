@@ -23,6 +23,7 @@
         debug: true,
         onSubmit: async (values) => {
             await new Promise((r) => setTimeout(r, 2000))
+            form.reset();
             alert(`Submitted values: ${JSON.stringify(values)}`);
             success = true;
         }
@@ -79,7 +80,7 @@
 <section class="form-section">
     <form class="form" on:submit|preventDefault={form.triggerSubmit}>
         <h2 class="form__title">Enter details</h2>
-        {#if success === false}
+        {#if success}
             <div role="alert" class="form__alert form__alert--success">
                 Form sent.
             </div>
