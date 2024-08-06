@@ -57,7 +57,7 @@
                         selectPhoto(index)
                     }}
             >
-                <img src={photo.src} alt="Thumbnail" class="slider__thumbnail-img"/>
+                <img src={photo.src} alt="Thumbnail {index}" class="slider__thumbnail-img"/>
             </button>
         {/each}
     </div>
