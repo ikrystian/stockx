@@ -2,20 +2,31 @@
     import {fade} from 'svelte/transition';
     import {onMount} from 'svelte';
 
-    let photos = [
+    // Define the type for a photo object
+    interface Photo {
+        src: string;
+        new_price: number;
+        old_price: number;
+    }
+
+    // Define the photos array with the Photo type
+    let photos: Photo[] = [
         {src: 'src/assets/slider_1.webp', new_price: 1.99, old_price: 500},
         {src: 'src/assets/slider_2.webp', new_price: 1.98, old_price: 501},
         {src: 'src/assets/slider_3.webp', new_price: 1.07, old_price: 502},
     ];
 
-    let currentIndex = 0;
+    // Define the currentIndex with a number type
+    let currentIndex: number = 0;
 
-    const selectPhoto = (index: number) => {
+    // Add a type annotation for the index parameter
+    const selectPhoto = (index: number): void => {
         currentIndex = index;
     };
 
+    // Use the Photo type in the forEach callback
     onMount(() => {
-        photos.forEach(photo => {
+        photos.forEach((photo: Photo) => {
             const img = new Image();
             img.src = photo.src;
         });
