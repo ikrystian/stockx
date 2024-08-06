@@ -26,7 +26,8 @@
             <article class="article" id="index-{index}">
                 {#if article.image}
                     <div class="article__image-wrapper">
-                        <img src="src/assets/{article.image.fileName}" alt="">
+                        <img class="article__image" src="src/assets/{article.image.fileName}"
+                             alt="Article image {index}">
                     </div>
                 {/if}
                 <div class="article__content-section">
@@ -80,13 +81,12 @@
       flex: 1;
     }
 
-    img {
+    &__image {
       border-radius: 1.875rem;
       margin-inline: auto;
-
     }
 
-    h3 {
+    &__title {
       font-size: 1.5rem;
       line-height: 1;
       font-weight: 700;
