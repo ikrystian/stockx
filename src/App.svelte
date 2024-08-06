@@ -4,6 +4,7 @@
     import Footer from "./components/Footer.svelte";
     import Articles from "./components/Articles.svelte";
     import BottomSection from "./components/BottomSection.svelte";
+    import SectionTitle from "./components/SectionTitle.svelte";
 </script>
 
 <main>
@@ -20,13 +21,8 @@
         </div>
     </div>
 
-    <section class="title-section">
-        <div class="container">
-            <h2 class="title-section__heading">Top Tech Mystery Box<span> at Unbeatable Prices</span></h2>
-            <p>Fast shipping | Easy returns | Special discounts for students</p>
-        </div>
-    </section>
-
+    <SectionTitle content="Fast shipping | Easy returns | Special discounts for students"
+                  title="Top Tech Mystery Box at Unbeatable Prices"/>
     <Articles/>
     <BottomSection/>
 </main>

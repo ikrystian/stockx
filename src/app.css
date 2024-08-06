@@ -7,6 +7,7 @@
     -moz-osx-font-smoothing: grayscale;
 
 
+    --font-family: "Roboto";
     --font-color: #293632;
     --headings-color: #2D473E;
     --primary-color: #006340;
@@ -41,13 +42,13 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-family), serif;
     color: var(--font-color);
     padding: 1rem;
 }
 
 input, button {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-family), serif;
     font-size: 1rem;
     line-height: 1.375rem;
 }
@@ -105,35 +106,3 @@ p {
     max-width: 100%;
 }
 
-
-.title-section {
-    margin-block: 3rem 2rem;
-    text-align: center;
-
-    span {
-        @media (width > 528px) {
-            display: block;
-        }
-    }
-
-    h2 {
-        font-size: 2rem;
-        max-width: 790px;
-        margin-inline: auto;
-        margin-bottom: 0.5rem;
-
-        @media (width > 768px) {
-            font-size: 3rem;
-        }
-    }
-
-    p {
-        font-size: 1rem;
-        color: #006340;
-
-        @media (width > 768px) {
-            font-size: 1.25rem;
-            line-height: 1.5rem;
-        }
-    }
-}
