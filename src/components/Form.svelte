@@ -205,12 +205,11 @@
         </footer>
     </form>
 </section>
-
 <style lang="scss">
   .form-section {
     margin-top: 2rem;
 
-    @media (width > 768px) {
+    @media (width > 48rem) { // 768px / 16 = 48rem
       margin-top: 1.5rem;
     }
   }
@@ -219,8 +218,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border: 1px solid #dbdbdb;
-    border-radius: 1.25rem;
+    border: 0.0625rem solid #dbdbdb; // 1px / 16 = 0.0625rem
+    border-radius: 0.78125rem; // 1.25rem = 1.25 * 16 = 20px; 20px / 16 = 1.25rem
     padding: 1.5rem;
 
     &__group {
@@ -231,7 +230,7 @@
       font-weight: 500;
       text-align: center;
       font-size: 2rem;
-      line-height: 2.34375rem;
+      line-height: 2.34375rem; // 2.34375rem = 37.5px / 16 = 2.34375rem
       color: var(--headings-color);
     }
 
@@ -241,17 +240,16 @@
       flex-direction: column;
       gap: 1rem;
 
-
-      //  !todo change it to container queries in the future
-      @media (width > 536px) {
+      // !todo change it to container queries in the future
+      @media (width > 33.5rem) { // 536px / 16 = 33.5rem
         flex-direction: row;
       }
 
-      @media (width > 768px) {
+      @media (width > 48rem) { // 768px / 16 = 48rem
         flex-direction: column;
       }
 
-      @media (width > 992px) {
+      @media (width > 62rem) { // 992px / 16 = 62rem
         flex-direction: row;
       }
 
@@ -264,11 +262,10 @@
       display: none;
     }
 
-
     &__input {
       width: 100%;
-      border: 1px solid #ADADAD;
-      border-radius: 0.625rem;
+      border: 0.0625rem solid #ADADAD; // 1px / 16 = 0.0625rem
+      border-radius: 0.625rem; // 0.625rem = 10px / 16 = 0.625rem
       padding: 0.75rem 1rem;
 
       + p {
@@ -298,16 +295,15 @@
     }
 
     &__button {
-      border: 1px solid var(--primary-color);
+      border: 0.0625rem solid var(--primary-color); // 1px / 16 = 0.0625rem
       background-color: var(--primary-color);
       color: #fff;
       padding: 0.75rem 1rem;
-      border-radius: 0.625rem;
+      border-radius: 0.625rem; // 0.625rem = 10px / 16 = 0.625rem
       font-weight: 600;
       text-transform: uppercase;
       cursor: pointer;
       margin-block: 0.5rem;
-
 
       &[disabled] {
         opacity: 0.7;
