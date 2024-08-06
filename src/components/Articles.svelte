@@ -3,6 +3,8 @@
     interface Image {
         fileName: string;
         alt: string;
+        width: number;
+        height: number;
     }
 
     // Define the interface for the article object
@@ -19,7 +21,9 @@
             content: "<p>Experience the thrill of unboxing cutting-edge gadgets with Stockx Mystery Boxes. Each box is a treasure trove of high-quality electronics, handpicked to elevate your tech game.</p><p>Expect the unexpected! Our boxes are packed with the latest gadgets, from smartphones to gaming consoles, ensuring you get the best tech surprises every time.</p>",
             image: {
                 fileName: "article-image-1.webp",
-                alt: "article image"
+                alt: "article image",
+                width: 583,
+                height: 582,
             }
         },
         {
@@ -27,7 +31,9 @@
             content: "<p>Experience the thrill of unboxing cutting-edge gadgets with Stockx Mystery Boxes. Each box is a treasure trove of high-quality electronics, handpicked to elevate your tech game.</p><p>Expect the unexpected! Our boxes are packed with the latest gadgets, from smartphones to gaming consoles, ensuring you get the best tech surprises every time.</p>",
             image: {
                 fileName: "article-image-2.webp",
-                alt: "article image 2"
+                alt: "article image 2",
+                width: 583,
+                width: 583
             }
         }
     ];
@@ -41,6 +47,8 @@
                     <div class="article__image-wrapper">
                         <img class="article__image"
                              loading="lazy"
+                             width={article.image.width}
+                             height={article.image.height}
                              src="/assets/{article.image.fileName}"
                              alt="Article image {index}">
                     </div>
