@@ -42,7 +42,7 @@
                         <strong class="slider__promo-price">${photo.new_price}</strong>
                         <p class="slider__promo-description">Original value <span>${photo.old_price}</span></p>
                     </div>
-                    <img src={photo.src} alt="Slider image {index}" class="slider__photo">
+                    <img loading="lazy" src={photo.src} alt="Slider image {index}" class="slider__photo">
                 </div>
             {/if}
         {/each}
@@ -57,7 +57,7 @@
                         selectPhoto(index)
                     }}
             >
-                <img src={photo.src} alt="Thumbnail {index}" class="slider__thumbnail-img"/>
+                <img loading="lazy" src={photo.src} alt="Thumbnail {index}" class="slider__thumbnail-img"/>
             </button>
         {/each}
     </div>
