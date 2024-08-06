@@ -66,7 +66,7 @@
     flex-direction: column;
     gap: 2rem;
 
-    @media (width > 768px) {
+    @media (width > 48rem) {
       flex-direction: row;
       align-items: center;
 
@@ -81,12 +81,12 @@
 
     &__image-wrapper {
 
-      @media (width > 768px) {
-        width: 250px;
+      @media (width > 48rem) {
+        width: 15.625rem;
       }
 
-      @media (width > 992px) {
-        width: 583px;
+      @media (width > 62rem) {
+        width: 36.4375rem;
       }
     }
 
@@ -105,7 +105,7 @@
       font-weight: 700;
       margin-bottom: 1rem;
 
-      @media (width > 768px) {
+      @media (width > 48rem) {
         font-size: 2.625rem;
         line-height: 3.25rem;
         margin-bottom: 1.5rem;
