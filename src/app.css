@@ -179,19 +179,6 @@ p {
     }
 }
 
-.footer {
-    text-align: center;
-    color: #293632;
-
-    img {
-        margin-inline: auto;
-    }
-
-    p {
-        font-size: 0.75rem;
-        margin-bottom: 0.25rem;
-    }
-}
 
 .title-section {
     margin-block: 3rem 2rem;
