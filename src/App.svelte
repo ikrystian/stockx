@@ -2,26 +2,7 @@
     import Slider from "./components/Slider.svelte";
     import Form from "./components/Form.svelte";
     import Footer from "./components/Footer.svelte";
-
-    const articles = [
-        {
-            title: "Curious about the <strong>StockX</strong> Mystery Box?",
-            content: "<p>Experience the thrill of unboxing cutting-edge gadgets with Stockx Mystery Boxes. Each box is a treasure trove of high-quality electronics, handpicked to elevate your tech game.</p><p>Expect the unexpected! Our boxes are packed with the latest gadgets, from smartphones to gaming consoles, ensuring you get the best tech surprises every time.</p>",
-            image: {
-                fileName: "article-image-1.svg",
-                alt: "article image"
-            }
-        },
-        {
-            title: "Why is everyone buzzing about these boxes?",
-            content: "<p>Experience the thrill of unboxing cutting-edge gadgets with Stockx Mystery Boxes. Each box is a treasure trove of high-quality electronics, handpicked to elevate your tech game.</p><p>Expect the unexpected! Our boxes are packed with the latest gadgets, from smartphones to gaming consoles, ensuring you get the best tech surprises every time.</p>",
-            image: {
-                fileName: "article-image-2.jpg",
-                alt: "article image 2"
-            }
-
-        }
-    ]
+    import Articles from "./components/Articles.svelte";
 </script>
 
 <main>
@@ -45,30 +26,7 @@
         </div>
     </section>
 
-    <div class="container articles">
-        {#each articles as article, index (article)}
-            <article class="article" id="index-{index}">
-                {#if article.image}
-                    <div class="article__image-section">
-                        <img src="src/assets/{article.image.fileName}" alt="">
-                    </div>
-                {/if}
-                <div class="article__content-section">
-                    <div>
-                        {#if article.title}
-                            <h3 class="article__title">{@html article.title}</h3>
-                        {/if}
-                        {#if article.content}
-                            <div class="article__content">
-                                {@html article.content}
-                            </div>
-                        {/if}
-                    </div>
-                </div>
-            </article>
-        {/each}
-    </div>
-
+    <Articles/>
 
     <section class="bottom-section">
         <div class="bottom-section__item">
