@@ -22,125 +22,128 @@
     });
 </script>
 
-<style lang="scss">
-  .slider-section {
-    max-width: 480px;
-    margin-inline: auto;
-    margin-bottom: 2rem;
-
-    @media (width > 768px) {
-      width: 480px;
-      max-width: 100%;
-    }
-  }
-
-  .slider {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1;
-    overflow: hidden;
-  }
-
-  .slider-promo {
-    background-color: var(--primary-color);
-    color: #fff;
-    width: 160px;
-    height: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 0.5rem;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    strong {
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 2.75rem;
-    }
-
-    p {
-      font-weight: 400;
-      font-size: 0.875rem;
-      line-height: 1rem;
-    }
-  }
-
-  .photo {
-    width: 100%;
-    max-width: 100%;
-    display: block;
-    height: auto;
-    max-height: 100%;
-  }
-
-  .thumbnails {
-    margin-top: 1rem;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    @media (width > 568px) {
-      justify-content: space-between;
-    }
-  }
-
-  .thumbnail {
-    width: 72px;
-    height: 72px;
-    cursor: pointer;
-    transition: transform 0.3s linear;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid var(--primary-color);
-
-    @media (width> 568px) {
-      width: 132px;
-      height: 132px;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-    &:not(.active) img {
-      opacity: 0.5;
-    }
-  }
-</style>
-
-<section class="slider-section">
-    <div class="slider">
-        {#each photos as photo, index (photo)}
+<section class="slider__section">
+    <div class="slider__container">
+        {#each photos as photo, index (photo.src)}
             {#if index === currentIndex}
                 <div transition:fade>
-                    <div class="slider-promo">
-                        <strong>${photo.new_price}</strong>
-                        <p>Original value <span>${photo.old_price}</span></p>
+                    <div class="slider__promo">
+                        <strong class="slider__promo-price">${photo.new_price}</strong>
+                        <p class="slider__promo-description">Original value <span>${photo.old_price}</span></p>
                     </div>
-                    <img src={photo.src} alt="Slider image {index}" class="photo">
+                    <img src={photo.src} alt="Slider image {index}" class="slider__photo">
                 </div>
             {/if}
         {/each}
     </div>
-    <div class="thumbnails">
+    <div class="slider__thumbnails">
         {#each photos as photo, index}
             <button
                     type="button"
-                    class="thumbnail {index === currentIndex ? 'active' : ''}"
+                    class="slider__thumbnail {index !== currentIndex ? 'slider__thumbnail--inactive' : ''}"
                     on:click={(e) => {
                         e.preventDefault();
                         selectPhoto(index)
                     }}
             >
-                <img src={photo.src} alt="Thumbnail"/>
+                <img src={photo.src} alt="Thumbnail" class="slider__thumbnail-img"/>
             </button>
         {/each}
     </div>
 </section>
+
+
+<style lang="scss">
+  .slider {
+    &__section {
+      max-width: 30rem; // 480px / 16 = 30rem
+      margin-inline: auto;
+      margin-bottom: 2rem;
+
+      @media (width > 48rem) { // 768px / 16 = 48rem
+        width: 30rem; // 480px / 16 = 30rem
+        max-width: 100%;
+      }
+    }
+
+    &__container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+
+    &__promo {
+      background-color: var(--primary-color);
+      color: #fff;
+      width: 10rem; // 160px / 16 = 10rem
+      height: 10rem; // 160px / 16 = 10rem
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 0.5rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      &-price {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.75rem;
+      }
+
+      &-description {
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1rem;
+      }
+    }
+
+    &__photo {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+      height: auto;
+      max-height: 100%;
+    }
+
+    &__thumbnails {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @media (width > 35.5rem) { // 568px / 16 = 35.5rem
+        justify-content: space-between;
+      }
+    }
+
+    &__thumbnail {
+      width: 4.5rem; // 72px / 16 = 4.5rem
+      height: 4.5rem; // 72px / 16 = 4.5rem
+      cursor: pointer;
+      transition: transform 0.3s linear;
+      border-radius: 1.25rem; // 20px / 16 = 1.25rem
+      overflow: hidden;
+      border: 0.0625rem solid var(--primary-color); // 1px / 16 = 0.0625rem
+
+      @media (width > 35.5rem) { // 568px / 16 = 35.5rem
+        width: 8.25rem; // 132px / 16 = 8.25rem
+        height: 8.25rem; // 132px / 16 = 8.25rem
+      }
+
+      &-img {
+        width: 100%;
+        height: auto;
+      }
+
+      &--inactive &-img {
+        opacity: 0.5;
+      }
+    }
+  }
+</style>
