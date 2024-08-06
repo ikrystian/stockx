@@ -239,6 +239,7 @@
       padding: 1rem;
       border: 1px solid transparent;
       text-align: center;
+      border-radius: 0.5rem;
 
       &--success {
         background-color: var(--primary-color);
