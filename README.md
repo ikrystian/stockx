@@ -9,7 +9,7 @@ npm run dev
 Demo site:
 
 ````
-http://stockx.bpcoders.pl
+http://archcode.rs
 ````
 
 Build project
