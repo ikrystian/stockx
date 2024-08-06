@@ -8,10 +8,12 @@
 
 
     --font-family: "Roboto";
-    --font-color: #293632;
-    --headings-color: #2D473E;
-    --primary-color: #006340;
-    --primary-background-color: #F5F5F5;
+    --font-color: rgb(41, 54, 50);
+    --headings-color: rgb(45, 71, 62);
+    --primary-color: rgb(0, 99, 64);
+    --primary-background-color: rgb(245, 245, 245);
+    --warning-color: rgb(255, 0, 0);
+    --invert-text: rgb(255, 255, 255)
 }
 
 * {
@@ -21,7 +23,7 @@
 }
 
 ::selection {
-    color: #fff;
+    color: var(--invert-text);
     background-color: var(--primary-color);
 }
 

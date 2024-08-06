@@ -86,7 +86,7 @@
 
     &__promo {
       background-color: var(--primary-color);
-      color: #fff;
+      color: var(--invert-text);
       width: 10rem; // 160px / 16 = 10rem
       height: 10rem; // 160px / 16 = 10rem
       display: flex;

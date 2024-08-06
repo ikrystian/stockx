@@ -1,10 +1,13 @@
 <script lang="ts">
     import {z} from 'zod'
 
-    import formImage1 from '../assets/form_1.svg';
-    import formImage2 from '../assets/form_2.svg';
-    import formImage3 from '../assets/form_3.svg';
     import {ZodFormStore} from "@nerd-coder/svelte-zod-form";
+
+    const formImages: string[] = [
+        'form_1.svg',
+        'form_2.svg',
+        'form_3.svg',
+    ]
 
     const formSchema = z.object({
         firstName: z.string(),
@@ -15,13 +18,15 @@
         phone: z.string(),
         email: z.string().email(),
     });
-
+    let success = false;
     const form = new ZodFormStore(formSchema, {
         debug: true,
         onSubmit: async (values) => {
             await new Promise((r) => setTimeout(r, 2000))
-            console.log('Submitted values:', values)
+            alert(`Submitted values: ${JSON.stringify(values)}`);
+            success = true;
         }
+
     });
 
     const {
@@ -74,6 +79,11 @@
 <section class="form-section">
     <form class="form" on:submit|preventDefault={form.triggerSubmit}>
         <h2 class="form__title">Enter details</h2>
+        {#if success === false}
+            <div role="alert" class="form__alert form__alert--success">
+                Form sent.
+            </div>
+        {/if}
         <div class="form__row">
             <div class="form__group">
                 <label class="form__label" for="firstName">First name</label>
@@ -196,13 +206,15 @@
         <button class="form__button" disabled={!$valid || $submitting} type="submit">
             {$submitting ? 'Processing...' : 'Proceed to payment'}
         </button>
-        <footer class="form__footer">
-            <ul>
-                <li><img alt="" src={formImage1}></li>
-                <li><img alt="" src={formImage2}></li>
-                <li><img alt="" src={formImage3}></li>
-            </ul>
-        </footer>
+        {#if formImages.length > 0}
+            <footer class="form__footer">
+                <ul>
+                    {#each formImages as image, index(image)}
+                        <li><img alt="form image {index}" src="src/assets/{image}"></li>
+                    {/each}
+                </ul>
+            </footer>
+        {/if}
     </form>
 </section>
 <style lang="scss">
@@ -222,6 +234,18 @@
     border-radius: 0.78125rem; // 1.25rem = 1.25 * 16 = 20px; 20px / 16 = 1.25rem
     padding: 1.5rem;
 
+    &__alert {
+      padding: 1rem;
+      border: 1px solid transparent;
+      text-align: center;
+
+      &--success {
+        background-color: var(--primary-color);
+        color: var(--invert-text);
+        border-color: var(--primary-color);
+      }
+    }
+
     &__group {
       position: relative;
     }
@@ -240,7 +264,6 @@
       flex-direction: column;
       gap: 1rem;
 
-      // !todo change it to container queries in the future
       @media (width > 33.5rem) { // 536px / 16 = 33.5rem
         flex-direction: row;
       }
@@ -267,6 +290,7 @@
       border: 0.0625rem solid #ADADAD; // 1px / 16 = 0.0625rem
       border-radius: 0.625rem; // 0.625rem = 10px / 16 = 0.625rem
       padding: 0.75rem 1rem;
+      transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 
       + p {
         font-size: 0.875rem;
@@ -275,14 +299,14 @@
 
       &--invalid {
         color: red;
-        border-color: red;
+        border-color: var(--warning-color);
 
         &::placeholder {
-          color: red;
+          color: var(--warning-color);
         }
 
         + p {
-          color: red;
+          color: var(--warning-color);
         }
       }
 
@@ -297,7 +321,7 @@
     &__button {
       border: 0.0625rem solid var(--primary-color); // 1px / 16 = 0.0625rem
       background-color: var(--primary-color);
-      color: #fff;
+      color: var(--invert-text);
       padding: 0.75rem 1rem;
       border-radius: 0.625rem; // 0.625rem = 10px / 16 = 0.625rem
       font-weight: 600;
