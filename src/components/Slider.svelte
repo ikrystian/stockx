@@ -97,8 +97,11 @@
       gap: 0.5rem;
       border-radius: 50%;
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 0.625rem;
+      right: 0.625rem;
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+      transform: scale(1);
+      animation: pulse 2s infinite;
 
       &-price {
         font-size: 2rem;
