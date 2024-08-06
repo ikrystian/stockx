@@ -1,5 +1,19 @@
 <script lang="ts">
-    const articles: any = [
+    // Define the interface for the image object
+    interface Image {
+        fileName: string;
+        alt: string;
+    }
+
+    // Define the interface for the article object
+    interface Article {
+        title: string;
+        content: string;
+        image: Image;
+    }
+
+    // Define the articles array with the Article type
+    const articles: Article[] = [
         {
             title: `Curious about the <strong style="color: var(--primary-color)">StockX</strong> Mystery Box?`,
             content: "<p>Experience the thrill of unboxing cutting-edge gadgets with Stockx Mystery Boxes. Each box is a treasure trove of high-quality electronics, handpicked to elevate your tech game.</p><p>Expect the unexpected! Our boxes are packed with the latest gadgets, from smartphones to gaming consoles, ensuring you get the best tech surprises every time.</p>",
@@ -15,9 +29,8 @@
                 fileName: "article-image-2.webp",
                 alt: "article image 2"
             }
-
         }
-    ]
+    ];
 </script>
 
 {#if articles.length > 0}
