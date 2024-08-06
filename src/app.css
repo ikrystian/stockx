@@ -10,6 +10,7 @@
     --font-color: #293632;
     --headings-color: #2D473E;
     --primary-color: #006340;
+    --primary-background-color: #F5F5F5;
 }
 
 * {
@@ -28,7 +29,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #F5F5F5;
+    background: var(--primary-background-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -102,40 +103,6 @@ p {
 .form-col {
     width: 42.375rem;
     max-width: 100%;
-}
-
-
-.bottom-section {
-    background-color: #F5F5F5;
-    display: grid;
-    gap: 2rem;
-    padding: 1.5rem 1rem;
-    margin: 3rem -1rem 1rem;
-    width: calc(100% + 2rem);
-
-    @media (width > 568px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    strong {
-        display: block;
-        margin-bottom: 0.25rem;
-        font-size: 1rem;
-        line-height: 1.25rem;
-
-        @media (width > 568px) {
-            font-size: 0.75rem;
-        }
-    }
-
-    p {
-        font-size: 0.875rem;
-        line-height: 1rem;
-
-        @media (width > 568px) {
-            font-size: 0.625rem;
-        }
-    }
 }
 
 
