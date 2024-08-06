@@ -1,5 +1,11 @@
 <script lang="ts">
-    const items: any = [
+    // Define the interface for the item object
+    interface Item {
+        title: string;
+        content: string;
+    }
+
+    const items: Item[] = [
         {
             title: 'How can I win?',
             content: 'Thanks to your membership, you also participate in our contest to win the iPhone15. We sellect a winner among every 600 participants. The next winner will be selected on 06.10.2023, and will be notified directly by e-mail. If the reward is out of stock, the winner will receive a similar product of equal or greater value instead.'
